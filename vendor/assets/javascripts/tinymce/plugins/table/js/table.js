@@ -209,10 +209,19 @@ function insertTable() {
 		html += "<tr>";
 
 		for (var x=0; x<cols; x++) {
-			if (!tinymce.isIE)
-				html += '<td><br data-mce-bogus="1"/></td>';
-			else
-				html += '<td></td>';
+			if (!tinymce.isIE) {
+				if (y == 0) {
+					html += '<th><br data-mce-bogus="1"/></th>';
+				} else {
+					html += '<td><br data-mce-bogus="1"/></td>';
+				}
+			} else {
+				if (y == 0) {
+					html += '<th></th>';
+				} else {
+					html += '<td></td>';
+				}
+			}
 		}
 
 		html += "</tr>";
