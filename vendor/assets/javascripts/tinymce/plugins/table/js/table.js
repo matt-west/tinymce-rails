@@ -206,6 +206,10 @@ function insertTable() {
 	}
 
 	for (var y=0; y<rows; y++) {
+		if (y==0) {
+	    html += "<thead>";
+	  }
+	    
 		html += "<tr>";
 
 		for (var x=0; x<cols; x++) {
@@ -225,6 +229,10 @@ function insertTable() {
 		}
 
 		html += "</tr>";
+
+	  if (y==0) {
+	    html += "</thead>";
+	  }
 	}
 
 	html += "</table>";
